@@ -1,0 +1,24 @@
+name: TankatusApp
+options:
+  bundleIdPrefix: by.tankatus
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "16"
+  generateEmptyDirectories: true
+targets:
+  TankatusApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: TankatusApp/Sources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: by.tankatus.app
+        SWIFT_VERSION: 5.9
+        DEVELOPMENT_TEAM: ""
+        CODE_SIGN_STYLE: Automatic
+        INFOPLIST_FILE: TankatusApp/Info.plist
+        IPHONEOS_DEPLOYMENT_TARGET: 17.0
+        MARKETING_VERSION: 1.0.0
+        CURRENT_PROJECT_VERSION: 1

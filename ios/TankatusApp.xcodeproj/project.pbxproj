@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B0E83FA99BA830AE8B907CE /* LocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC86B4C9916B639DF8AF1D4 /* LocalDataStore.swift */; };
+		0DD4664B7B98B616CFB8CA98 /* SubtaskFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9024B5DA434C5EACE6B911 /* SubtaskFormView.swift */; };
+		16819C9A7504735110E3FC95 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF80E0B08DBBCB1276C2BC6 /* LoginView.swift */; };
+		1850E4B1B58D80CA8C430FD6 /* MyTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F47B4F136D4A325D13654EF /* MyTasksView.swift */; };
+		1D344B9FE385B844D05BE587 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41F606A12A3D6C8F9845158 /* WebSocketService.swift */; };
+		2BC981F4037343B4E81D2655 /* TankatusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2616EED933D913022DEE2B5 /* TankatusApp.swift */; };
+		3779579697F68C0AA25711E4 /* KPIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81626D1AC075C1FA6BB29BED /* KPIView.swift */; };
+		42ED3E9837D9FE880F5FC7F1 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6D185A40F0BB69D2524D8 /* DashboardView.swift */; };
+		61B4CC4672D463556E50528F /* AuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B29A481ED8C6AA30255CC0 /* AuthStore.swift */; };
+		6608BFFDDDBB5E3E3353CEF3 /* TaskFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EC97EE7D1ADDD3C5EABE1 /* TaskFormView.swift */; };
+		6F90C2B6B34D09A305CEF58E /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA9C19E7D381EEFD3B3F3C1 /* UsersView.swift */; };
+		85F422DBE135CEA77ED5B63E /* GanttView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F726AB915A7C5146813C63E /* GanttView.swift */; };
+		96E9FAC27F80152F469FE82A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A37C7705B719323AB5D729C /* APIService.swift */; };
+		A1BDA5135F4CF2DDF47FD8C8 /* ProjectFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8706153F98EAD4302B291BB9 /* ProjectFormView.swift */; };
+		A3AAC8E6FEF2683ACB110A9E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA00F1E2DF959E189533014 /* ProfileView.swift */; };
+		AEB879DCB34F97480B0DF736 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEFB3B87D09712EAA029B62 /* ProjectsView.swift */; };
+		C87A8A9E12B9A41FC06BC882 /* ProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3499022FDEBE7B606AA6725A /* ProjectDetailView.swift */; };
+		DE525D4433FDEF195ECFB1C4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF4C23DFBDF7292B7DC1BF2 /* Models.swift */; };
+		DF91E09B15382014E5E15DE6 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A4E830C44B3491CB78D476 /* MainTabView.swift */; };
+		F15F70A6D637E67EF20566A6 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E03E222463A1933DDC39D8C /* ViewModels.swift */; };
+		F2DF7019706ECA112937D316 /* SharedComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5B8D35FDAF847B7235573 /* SharedComponents.swift */; };
+		FF2614ADDA9FE2CB48BFCD55 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B31F068CBD47B4A1A4C6CCD /* Constants.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		23A4E830C44B3491CB78D476 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		2E03E222463A1933DDC39D8C /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
+		3499022FDEBE7B606AA6725A /* ProjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailView.swift; sourceTree = "<group>"; };
+		3A37C7705B719323AB5D729C /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		3FA5B8D35FDAF847B7235573 /* SharedComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedComponents.swift; sourceTree = "<group>"; };
+		42B6D185A40F0BB69D2524D8 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		4EEFB3B87D09712EAA029B62 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+		6AA9C19E7D381EEFD3B3F3C1 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		6F47B4F136D4A325D13654EF /* MyTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTasksView.swift; sourceTree = "<group>"; };
+		702EC97EE7D1ADDD3C5EABE1 /* TaskFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFormView.swift; sourceTree = "<group>"; };
+		75B29A481ED8C6AA30255CC0 /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
+		7CC5269AC26A1C3194742264 /* TankatusApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = TankatusApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81626D1AC075C1FA6BB29BED /* KPIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPIView.swift; sourceTree = "<group>"; };
+		8706153F98EAD4302B291BB9 /* ProjectFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFormView.swift; sourceTree = "<group>"; };
+		8DC86B4C9916B639DF8AF1D4 /* LocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataStore.swift; sourceTree = "<group>"; };
+		9B31F068CBD47B4A1A4C6CCD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9F726AB915A7C5146813C63E /* GanttView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttView.swift; sourceTree = "<group>"; };
+		A41F606A12A3D6C8F9845158 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
+		AF9024B5DA434C5EACE6B911 /* SubtaskFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtaskFormView.swift; sourceTree = "<group>"; };
+		BDF4C23DFBDF7292B7DC1BF2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		C2616EED933D913022DEE2B5 /* TankatusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankatusApp.swift; sourceTree = "<group>"; };
+		EAA00F1E2DF959E189533014 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		FCF80E0B08DBBCB1276C2BC6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0D93AD0C81DDD404C252334E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9B31F068CBD47B4A1A4C6CCD /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		1960854AC42D5B33345E877E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3FA5B8D35FDAF847B7235573 /* SharedComponents.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		40B243E9541239DA23C8AFC3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C2616EED933D913022DEE2B5 /* TankatusApp.swift */,
+				5AA54ACCD77709D320452393 /* Models */,
+				5E73B399BEBDC334BDF2DA75 /* Services */,
+				0D93AD0C81DDD404C252334E /* Utilities */,
+				574D4A39E0AD592E4EF34D73 /* ViewModels */,
+				B5F56AF055A5D4535ED61685 /* Views */,
+			);
+			name = Sources;
+			path = TankatusApp/Sources;
+			sourceTree = "<group>";
+		};
+		449A9D9DD4AACA03CE9C015F /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FCF80E0B08DBBCB1276C2BC6 /* LoginView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		4BFFA06F043E20C1D2444FE2 /* KPI */ = {
+			isa = PBXGroup;
+			children = (
+				81626D1AC075C1FA6BB29BED /* KPIView.swift */,
+			);
+			path = KPI;
+			sourceTree = "<group>";
+		};
+		574D4A39E0AD592E4EF34D73 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2E03E222463A1933DDC39D8C /* ViewModels.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5AA54ACCD77709D320452393 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BDF4C23DFBDF7292B7DC1BF2 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5B0C18B60571969B591526C1 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				9F726AB915A7C5146813C63E /* GanttView.swift */,
+				3499022FDEBE7B606AA6725A /* ProjectDetailView.swift */,
+				8706153F98EAD4302B291BB9 /* ProjectFormView.swift */,
+				4EEFB3B87D09712EAA029B62 /* ProjectsView.swift */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		5D887E2E611A26B50309BA21 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				6F47B4F136D4A325D13654EF /* MyTasksView.swift */,
+				AF9024B5DA434C5EACE6B911 /* SubtaskFormView.swift */,
+				702EC97EE7D1ADDD3C5EABE1 /* TaskFormView.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		5E73B399BEBDC334BDF2DA75 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3A37C7705B719323AB5D729C /* APIService.swift */,
+				75B29A481ED8C6AA30255CC0 /* AuthStore.swift */,
+				8DC86B4C9916B639DF8AF1D4 /* LocalDataStore.swift */,
+				A41F606A12A3D6C8F9845158 /* WebSocketService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8B7DC621407DAB2941DE9E98 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7CC5269AC26A1C3194742264 /* TankatusApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9197B65B75DC0F46BD7A9863 = {
+			isa = PBXGroup;
+			children = (
+				40B243E9541239DA23C8AFC3 /* Sources */,
+				8B7DC621407DAB2941DE9E98 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B5F56AF055A5D4535ED61685 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				23A4E830C44B3491CB78D476 /* MainTabView.swift */,
+				449A9D9DD4AACA03CE9C015F /* Auth */,
+				1960854AC42D5B33345E877E /* Components */,
+				E7F06178DCB8283EEADB8259 /* Dashboard */,
+				4BFFA06F043E20C1D2444FE2 /* KPI */,
+				D561B4C8C0406C73FEEDA647 /* Profile */,
+				5B0C18B60571969B591526C1 /* Projects */,
+				5D887E2E611A26B50309BA21 /* Tasks */,
+				B6F30ADC8D45C750EFD41BD0 /* Users */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B6F30ADC8D45C750EFD41BD0 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				6AA9C19E7D381EEFD3B3F3C1 /* UsersView.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		D561B4C8C0406C73FEEDA647 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				EAA00F1E2DF959E189533014 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E7F06178DCB8283EEADB8259 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				42B6D185A40F0BB69D2524D8 /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D2A6B570F62EAA02E3F6C840 /* TankatusApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C5571F1D92C40F21DE88325 /* Build configuration list for PBXNativeTarget "TankatusApp" */;
+			buildPhases = (
+				C19B4AAF267A65EC0C7CFC16 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TankatusApp;
+			packageProductDependencies = (
+			);
+			productName = TankatusApp;
+			productReference = 7CC5269AC26A1C3194742264 /* TankatusApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E68AC996EAF5F8BC53D4DA0F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					D2A6B570F62EAA02E3F6C840 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 727CF044084DC232744EF539 /* Build configuration list for PBXProject "TankatusApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 9197B65B75DC0F46BD7A9863;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 8B7DC621407DAB2941DE9E98 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2A6B570F62EAA02E3F6C840 /* TankatusApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C19B4AAF267A65EC0C7CFC16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96E9FAC27F80152F469FE82A /* APIService.swift in Sources */,
+				61B4CC4672D463556E50528F /* AuthStore.swift in Sources */,
+				FF2614ADDA9FE2CB48BFCD55 /* Constants.swift in Sources */,
+				42ED3E9837D9FE880F5FC7F1 /* DashboardView.swift in Sources */,
+				85F422DBE135CEA77ED5B63E /* GanttView.swift in Sources */,
+				3779579697F68C0AA25711E4 /* KPIView.swift in Sources */,
+				0B0E83FA99BA830AE8B907CE /* LocalDataStore.swift in Sources */,
+				16819C9A7504735110E3FC95 /* LoginView.swift in Sources */,
+				DF91E09B15382014E5E15DE6 /* MainTabView.swift in Sources */,
+				DE525D4433FDEF195ECFB1C4 /* Models.swift in Sources */,
+				1850E4B1B58D80CA8C430FD6 /* MyTasksView.swift in Sources */,
+				A3AAC8E6FEF2683ACB110A9E /* ProfileView.swift in Sources */,
+				C87A8A9E12B9A41FC06BC882 /* ProjectDetailView.swift in Sources */,
+				A1BDA5135F4CF2DDF47FD8C8 /* ProjectFormView.swift in Sources */,
+				AEB879DCB34F97480B0DF736 /* ProjectsView.swift in Sources */,
+				F2DF7019706ECA112937D316 /* SharedComponents.swift in Sources */,
+				0DD4664B7B98B616CFB8CA98 /* SubtaskFormView.swift in Sources */,
+				2BC981F4037343B4E81D2655 /* TankatusApp.swift in Sources */,
+				6608BFFDDDBB5E3E3353CEF3 /* TaskFormView.swift in Sources */,
+				6F90C2B6B34D09A305CEF58E /* UsersView.swift in Sources */,
+				F15F70A6D637E67EF20566A6 /* ViewModels.swift in Sources */,
+				1D344B9FE385B844D05BE587 /* WebSocketService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		45E396DE0C1D6A4660BC904D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		8EFAF4F9B112EFC0042716B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		96DB85E90C279EF7C56A8837 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = TankatusApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = by.tankatus.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FB6687030B742A834F91BD48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = TankatusApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = by.tankatus.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0C5571F1D92C40F21DE88325 /* Build configuration list for PBXNativeTarget "TankatusApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB6687030B742A834F91BD48 /* Debug */,
+				96DB85E90C279EF7C56A8837 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		727CF044084DC232744EF539 /* Build configuration list for PBXProject "TankatusApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EFAF4F9B112EFC0042716B8 /* Debug */,
+				45E396DE0C1D6A4660BC904D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E68AC996EAF5F8BC53D4DA0F /* Project object */;
+}

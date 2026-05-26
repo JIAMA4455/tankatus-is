@@ -1,4 +1,5 @@
 require('dotenv').config();
+if (!process.env.JWT_SECRET) process.env.JWT_SECRET = 'tankatus_jwt_secret_change_in_production';
 const express  = require('express');
 const http     = require('http');
 const cors     = require('cors');
@@ -51,7 +52,7 @@ const frontendDist = path.join(__dirname, '../../frontend/dist');
 const fs = require('fs');
 if (fs.existsSync(frontendDist)) {
   app.use(express.static(frontendDist));
-  app.get('*', (req, res) => {
+  app.get('*', (req, res, next) => {
     if (req.path.startsWith('/api/')) return next();
     res.sendFile(path.join(frontendDist, 'index.html'));
   });

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "build": "cd ../frontend && npx vite build",
+    "build": "cd ../frontend && npm install && npx vite build",
     "prod": "npm run build && node src/index.js",
     "db:init": "node -e \"require('./src/db').initSchema(); console.log('DB initialized')\""
   },

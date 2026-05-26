@@ -159,75 +159,114 @@ export default function UsersPage() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 md:mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Пользователи</h1>
-          <p className="text-gray-500 text-sm mt-1">{users.filter(u => u.is_active).length} активных</p>
+          <h1 className="text-xl md:text-2xl font-bold text-gray-900">Пользователи</h1>
+          <p className="text-gray-500 text-sm mt-0.5">{users.filter(u => u.is_active).length} активных</p>
         </div>
         {isAdmin && (
-          <button className="btn-primary" onClick={() => setShowCreate(true)}>+ Новый пользователь</button>
+          <button className="btn-primary w-full sm:w-auto text-center" onClick={() => setShowCreate(true)}>+ Новый пользователь</button>
         )}
       </div>
 
-      <div className="mb-6">
-        <input className="input max-w-xs" placeholder="Поиск по имени или email..."
+      <div className="mb-4 md:mb-6">
+        <input className="input w-full sm:max-w-xs" placeholder="Поиск по имени или email..."
           value={search} onChange={e => setSearch(e.target.value)} />
       </div>
 
       {loading ? (
         <div className="text-center text-gray-400 py-16">Загрузка...</div>
       ) : (
-        <div className="card overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-gray-100">
-                <th className="text-left py-3 px-4 text-gray-500 font-medium">Пользователь</th>
-                <th className="text-left py-3 px-4 text-gray-500 font-medium">Отдел</th>
-                <th className="text-left py-3 px-4 text-gray-500 font-medium">Роль</th>
-                <th className="text-left py-3 px-4 text-gray-500 font-medium">Статус</th>
-                {isAdmin && <th className="text-left py-3 px-4 text-gray-500 font-medium">Действия</th>}
-              </tr>
-            </thead>
-            <tbody>
-              {filtered.map(user => (
-                <tr key={user.id} className={`border-b border-gray-50 hover:bg-gray-50 ${!user.is_active ? 'opacity-50' : ''}`}>
-                  <td className="py-3 px-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center font-semibold text-xs">
-                        {user.full_name.split(' ').map(n => n[0]).join('').slice(0,2).toUpperCase()}
+        <>
+          {/* Desktop table */}
+          <div className="hidden md:block card overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-gray-100">
+                  <th className="text-left py-3 px-4 text-gray-500 font-medium">Пользователь</th>
+                  <th className="text-left py-3 px-4 text-gray-500 font-medium">Отдел</th>
+                  <th className="text-left py-3 px-4 text-gray-500 font-medium">Роль</th>
+                  <th className="text-left py-3 px-4 text-gray-500 font-medium">Статус</th>
+                  {isAdmin && <th className="text-left py-3 px-4 text-gray-500 font-medium">Действия</th>}
+                </tr>
+              </thead>
+              <tbody>
+                {filtered.map(user => (
+                  <tr key={user.id} className={`border-b border-gray-50 hover:bg-gray-50 ${!user.is_active ? 'opacity-50' : ''}`}>
+                    <td className="py-3 px-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center font-semibold text-xs">
+                          {user.full_name.split(' ').map(n => n[0]).join('').slice(0,2).toUpperCase()}
+                        </div>
+                        <div>
+                          <p className="font-medium text-gray-900">{user.full_name}</p>
+                          <p className="text-xs text-gray-400">{user.email}</p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="font-medium text-gray-900">{user.full_name}</p>
-                        <p className="text-xs text-gray-400">{user.email}</p>
-                      </div>
+                    </td>
+                    <td className="py-3 px-4 text-gray-500">{user.department || '—'}</td>
+                    <td className="py-3 px-4">
+                      <span className={`badge ${ROLE_COLORS[user.role] || 'bg-gray-100 text-gray-600'}`}>
+                        {ROLE_LABELS[user.role] || user.role}
+                      </span>
+                    </td>
+                    <td className="py-3 px-4">
+                      <span className={`badge ${user.is_active ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                        {user.is_active ? 'Активен' : 'Заблокирован'}
+                      </span>
+                    </td>
+                    {isAdmin && (
+                      <td className="py-3 px-4">
+                        {user.id !== currentUser?.id && (
+                          <button className="text-xs text-primary-600 hover:underline"
+                            onClick={() => setEditUser(user)}>
+                            Изменить
+                          </button>
+                        )}
+                      </td>
+                    )}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Mobile cards */}
+          <div className="md:hidden space-y-3">
+            {filtered.map(user => (
+              <div key={user.id} className={`card ${!user.is_active ? 'opacity-50' : ''}`}>
+                <div className="flex items-start justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center font-semibold text-sm">
+                      {user.full_name.split(' ').map(n => n[0]).join('').slice(0,2).toUpperCase()}
                     </div>
-                  </td>
-                  <td className="py-3 px-4 text-gray-500">{user.department || '—'}</td>
-                  <td className="py-3 px-4">
-                    <span className={`badge ${ROLE_COLORS[user.role] || 'bg-gray-100 text-gray-600'}`}>
-                      {ROLE_LABELS[user.role] || user.role}
-                    </span>
-                  </td>
-                  <td className="py-3 px-4">
-                    <span className={`badge ${user.is_active ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                    <div>
+                      <p className="font-medium text-gray-900 text-sm">{user.full_name}</p>
+                      <p className="text-xs text-gray-400">{user.email}</p>
+                    </div>
+                  </div>
+                  <span className={`badge text-xs ${ROLE_COLORS[user.role] || 'bg-gray-100 text-gray-600'}`}>
+                    {ROLE_LABELS[user.role] || user.role}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-100">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-gray-500">{user.department || '—'}</span>
+                    <span className={`badge text-xs ${user.is_active ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
                       {user.is_active ? 'Активен' : 'Заблокирован'}
                     </span>
-                  </td>
-                  {isAdmin && (
-                    <td className="py-3 px-4">
-                      {user.id !== currentUser?.id && (
-                        <button className="text-xs text-primary-600 hover:underline"
-                          onClick={() => setEditUser(user)}>
-                          Изменить
-                        </button>
-                      )}
-                    </td>
+                  </div>
+                  {isAdmin && user.id !== currentUser?.id && (
+                    <button className="text-xs text-primary-600 font-medium"
+                      onClick={() => setEditUser(user)}>
+                      Изменить
+                    </button>
                   )}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
       )}
 
       {showCreate && (

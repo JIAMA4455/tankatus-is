@@ -30,16 +30,16 @@ export default function MyTasksPage() {
 
   return (
     <div>
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Мои задачи</h1>
-        <p className="text-gray-500 text-sm mt-1">{tasks.length} активных задач</p>
+      <div className="mb-4 md:mb-6">
+        <h1 className="text-xl md:text-2xl font-bold text-gray-900">Мои задачи</h1>
+        <p className="text-gray-500 text-sm mt-0.5">{tasks.length} активных задач</p>
       </div>
 
-      <div className="flex gap-2 mb-6">
+      <div className="flex gap-1 md:gap-2 mb-4 md:mb-6 overflow-x-auto pb-1">
         {['', 'todo', 'in_progress', 'review'].map(s => (
           <button key={s}
             onClick={() => setFilter(s)}
-            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+            className={`px-2.5 md:px-3 py-1.5 rounded-full text-[11px] md:text-xs font-medium whitespace-nowrap transition-colors ${
               filter === s ? 'bg-primary-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}>
             {s === '' ? 'Все' : s === 'todo' ? 'К выполнению' : s === 'in_progress' ? 'В работе' : 'На ревью'}

@@ -110,17 +110,17 @@ function AutoKpiSection({ projectId, canManage, onSnapshotSaved }: {
       )}
 
       {/* PV / EV / AC / BAC */}
-      <div className="grid grid-cols-4 gap-3 mb-5">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 mb-4 md:mb-5">
         {[
           { label: 'BAC', value: data.bac, color: 'text-gray-700', hint: 'Бюджет по завершению' },
           { label: 'PV',  value: data.pv,  color: 'text-blue-600',  hint: 'Плановый объём' },
           { label: 'EV',  value: data.ev,  color: 'text-green-600', hint: 'Освоенный объём' },
           { label: 'AC',  value: data.ac,  color: 'text-orange-500',hint: 'Фактические затраты' },
         ].map(({ label, value, color, hint }) => (
-          <div key={label} className="bg-gray-50 rounded-xl p-3 text-center border border-gray-100">
-            <p className="text-xs text-gray-400 mb-1">{hint}</p>
-            <p className={`text-xl font-bold ${color}`}>{value.toFixed(2).replace('.', ',')} BYN</p>
-            <p className="text-xs font-medium text-gray-500 mt-0.5">{label}</p>
+          <div key={label} className="bg-gray-50 rounded-xl p-2 md:p-3 text-center border border-gray-100">
+            <p className="text-[10px] md:text-xs text-gray-400 mb-0.5 md:mb-1">{hint}</p>
+            <p className={`text-sm md:text-xl font-bold ${color}`}>{value.toFixed(2).replace('.', ',')} BYN</p>
+            <p className="text-[10px] md:text-xs font-medium text-gray-500 mt-0.5">{label}</p>
           </div>
         ))}
       </div>
@@ -148,18 +148,18 @@ function AutoKpiSection({ projectId, canManage, onSnapshotSaved }: {
       </div>
 
       {(data.eac != null || data.etc != null || data.vac != null) && (
-        <div className="grid grid-cols-3 gap-3 mt-3">
-          <div className="bg-gray-50 rounded-xl p-3 border border-gray-100">
-            <p className="text-xs text-gray-400 mb-1">EAC — Прогноз итоговых затрат</p>
-            <p className="text-xl font-bold text-orange-600">{data.eac?.toFixed(2).replace('.', ',')} BYN</p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-3 mt-3">
+          <div className="bg-gray-50 rounded-xl p-2 md:p-3 border border-gray-100">
+            <p className="text-[10px] md:text-xs text-gray-400 mb-0.5 md:mb-1">EAC — Прогноз итоговых затрат</p>
+            <p className="text-sm md:text-xl font-bold text-orange-600">{data.eac?.toFixed(2).replace('.', ',')} BYN</p>
           </div>
-          <div className="bg-gray-50 rounded-xl p-3 border border-gray-100">
-            <p className="text-xs text-gray-400 mb-1">ETC — Оставшиеся затраты</p>
-            <p className="text-xl font-bold text-purple-600">{data.etc?.toFixed(2).replace('.', ',')} BYN</p>
+          <div className="bg-gray-50 rounded-xl p-2 md:p-3 border border-gray-100">
+            <p className="text-[10px] md:text-xs text-gray-400 mb-0.5 md:mb-1">ETC — Оставшиеся затраты</p>
+            <p className="text-sm md:text-xl font-bold text-purple-600">{data.etc?.toFixed(2).replace('.', ',')} BYN</p>
           </div>
-          <div className="bg-gray-50 rounded-xl p-3 border border-gray-100">
-            <p className="text-xs text-gray-400 mb-1">VAC — Разница при завершении</p>
-            <p className={`text-xl font-bold ${(data.vac ?? 0) >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+          <div className="bg-gray-50 rounded-xl p-2 md:p-3 border border-gray-100">
+            <p className="text-[10px] md:text-xs text-gray-400 mb-0.5 md:mb-1">VAC — Разница при завершении</p>
+            <p className={`text-sm md:text-xl font-bold ${(data.vac ?? 0) >= 0 ? 'text-green-600' : 'text-red-600'}`}>
               {data.vac?.toFixed(2).replace('.', ',')} BYN
             </p>
           </div>
@@ -297,20 +297,18 @@ export default function KpiPage() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">KPI проектов</h1>
-          <p className="text-gray-500 text-sm mt-1">Анализ методом освоенного объёма (EVM)</p>
-        </div>
+      <div className="mb-4 md:mb-6">
+        <h1 className="text-xl md:text-2xl font-bold text-gray-900">KPI проектов</h1>
+        <p className="text-gray-500 text-sm mt-0.5">Анализ методом освоенного объёма (EVM)</p>
       </div>
 
-      <div className="flex items-center gap-3 mb-6">
-        <select className="input max-w-xs" value={selectedProject}
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 mb-4 md:mb-6">
+        <select className="input w-full sm:max-w-xs" value={selectedProject}
           onChange={e => setSelectedProject(e.target.value)}>
           {projects.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
         </select>
         {canManage && (
-          <button className="btn-secondary text-sm" onClick={() => setShowForm(true)}>
+          <button className="btn-secondary text-sm text-center" onClick={() => setShowForm(true)}>
             + Ручной снимок
           </button>
         )}

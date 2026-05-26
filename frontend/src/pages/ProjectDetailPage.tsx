@@ -340,19 +340,19 @@ function WBSTreeView({ tasks, canManage, stages, users, projectId, onReload }: {
         )}
       </div>
 
-      <table className="w-full text-sm border-collapse">
+      <table className="w-full text-xs md:text-sm border-collapse">
         <thead>
-          <tr className="bg-gray-50 border-y border-gray-200 text-left text-xs text-gray-500 font-medium">
-            <th className="py-2 px-2 w-12">№</th>
-            <th className="py-2 px-3 min-w-[260px]">Название</th>
-            <th className="py-2 px-3">Исполнитель</th>
-            <th className="py-2 px-3">Статус</th>
-            <th className="py-2 px-3">Приоритет</th>
-            <th className="py-2 px-3">Начало</th>
-            <th className="py-2 px-3">Срок</th>
-            <th className="py-2 px-3 text-center">Бюджет</th>
-            <th className="py-2 px-3 text-center">Часы</th>
-            <th className="py-2 px-3 w-24 text-center">Действия</th>
+          <tr className="bg-gray-50 border-y border-gray-200 text-left text-[10px] md:text-xs text-gray-500 font-medium">
+            <th className="py-1.5 md:py-2 px-1 md:px-2 w-8 md:w-12">№</th>
+            <th className="py-1.5 md:py-2 px-1 md:px-3 min-w-[180px] md:min-w-[260px]">Название</th>
+            <th className="py-1.5 md:py-2 px-1 md:px-3 hidden sm:table-cell">Исполнитель</th>
+            <th className="py-1.5 md:py-2 px-1 md:px-3">Статус</th>
+            <th className="py-1.5 md:py-2 px-1 md:px-3 hidden md:table-cell">Приоритет</th>
+            <th className="py-1.5 md:py-2 px-1 md:px-3 hidden lg:table-cell">Начало</th>
+            <th className="py-1.5 md:py-2 px-1 md:px-3 hidden sm:table-cell">Срок</th>
+            <th className="py-1.5 md:py-2 px-1 md:px-3 text-center hidden md:table-cell">Бюджет</th>
+            <th className="py-1.5 md:py-2 px-1 md:px-3 text-center">Часы</th>
+            <th className="py-1.5 md:py-2 px-1 md:px-3 w-16 md:w-24 text-center">Действия</th>
           </tr>
         </thead>
         <tbody>
@@ -367,10 +367,10 @@ function WBSTreeView({ tasks, canManage, stages, users, projectId, onReload }: {
               <tr key={task.id}
                 className={`border-b border-gray-100 hover:bg-blue-50/30 transition-colors group ${isEven ? '' : 'bg-gray-50/50'}`}>
 
-                <td className="py-2 px-2 text-xs text-gray-400 font-mono whitespace-nowrap">{wbs}</td>
+                <td className="py-1 md:py-2 px-1 md:px-2 text-[10px] md:text-xs text-gray-400 font-mono whitespace-nowrap">{wbs}</td>
 
-                <td className="py-2 px-3">
-                  <div className="flex items-center gap-1.5" style={{ paddingLeft: depth * 20 }}>
+                <td className="py-1 md:py-2 px-1 md:px-3">
+                  <div className="flex items-center gap-1" style={{ paddingLeft: depth * 16 }}>
                     {hasChildren ? (
                       <button onClick={() => toggleCollapse(task.id)}
                         className="w-4 h-4 flex-shrink-0 flex items-center justify-center rounded text-gray-400 hover:text-gray-700 hover:bg-gray-200 transition-colors text-xs">
@@ -390,39 +390,39 @@ function WBSTreeView({ tasks, canManage, stages, users, projectId, onReload }: {
                   </div>
                 </td>
 
-                <td className="py-2 px-3 text-gray-500 whitespace-nowrap">
+                <td className="py-1 md:py-2 px-1 md:px-3 text-gray-500 whitespace-nowrap hidden sm:table-cell">
                   {task.assignee_name || <span className="text-gray-300">—</span>}
                 </td>
 
-                <td className="py-2 px-3">
+                <td className="py-1 md:py-2 px-1 md:px-3">
                   <StatusBadge status={task.status} />
                 </td>
 
-                <td className="py-2 px-3">
+                <td className="py-1 md:py-2 px-1 md:px-3 hidden md:table-cell">
                   <PriorityBadge priority={task.priority} />
                 </td>
 
-                <td className="py-2 px-3 text-gray-500 whitespace-nowrap text-xs">
+                <td className="py-1 md:py-2 px-1 md:px-3 text-gray-500 whitespace-nowrap text-[10px] md:text-xs hidden lg:table-cell">
                   {task.start_date ? new Date(task.start_date).toLocaleDateString('ru') : <span className="text-gray-300">—</span>}
                 </td>
 
-                <td className={`py-2 px-3 whitespace-nowrap text-xs ${isOverdue ? 'text-red-500 font-semibold' : 'text-gray-500'}`}>
+                <td className={`py-1 md:py-2 px-1 md:px-3 whitespace-nowrap text-[10px] md:text-xs hidden sm:table-cell ${isOverdue ? 'text-red-500 font-semibold' : 'text-gray-500'}`}>
                   {task.due_date ? new Date(task.due_date).toLocaleDateString('ru') : <span className="text-gray-300">—</span>}
                 </td>
 
-                <td className="py-2 px-3 text-center text-xs text-gray-500 whitespace-nowrap">
+                <td className="py-1 md:py-2 px-1 md:px-3 text-center text-[10px] md:text-xs text-gray-500 whitespace-nowrap hidden md:table-cell">
                   {task.budget != null
                     ? <span className="text-gray-700 font-medium">{task.budget.toFixed(2)} BYN</span>
                     : <span className="text-gray-300">—</span>}
                 </td>
-                <td className="py-2 px-3 text-center text-xs text-gray-500 whitespace-nowrap">
+                <td className="py-1 md:py-2 px-1 md:px-3 text-center text-[10px] md:text-xs text-gray-500 whitespace-nowrap">
                   <span className="text-gray-700 font-medium">{task.actual_hours ?? 0}</span>
                   <span className="text-gray-300 mx-0.5">/</span>
                   <span>{task.estimated_hours ?? '—'}</span>
                 </td>
 
-                <td className="py-2 px-3">
-                  <div className="flex items-center justify-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <td className="py-1 md:py-2 px-1 md:px-3">
+                  <div className="flex items-center justify-center gap-0.5 md:gap-1 opacity-0 md:opacity-100 group-hover:opacity-100 transition-opacity">
                     {canManage && (
                       <button
                         onClick={() => setModal({ type: 'create', parentId: task.id })}
@@ -546,48 +546,48 @@ export default function ProjectDetailPage() {
   return (
     <div>
       {/* Header */}
-      <div className="mb-6">
-        <Link to="/projects" className="text-sm text-gray-400 hover:text-gray-600 mb-2 inline-block">
+      <div className="mb-4 md:mb-6">
+        <Link to="/projects" className="text-xs md:text-sm text-gray-400 hover:text-gray-600 mb-1 md:mb-2 inline-block">
           ← Все проекты
         </Link>
-        <div className="flex items-start justify-between">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">{project.name}</h1>
-            {project.description && <p className="text-gray-500 mt-1">{project.description}</p>}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+          <div className="flex-1 min-w-0">
+            <h1 className="text-xl md:text-2xl font-bold text-gray-900 truncate">{project.name}</h1>
+            {project.description && <p className="text-gray-500 text-sm mt-0.5 line-clamp-2">{project.description}</p>}
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-shrink-0">
             <StatusBadge status={project.status} />
             <PriorityBadge priority={project.priority} />
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-4 mt-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-4 mt-3 md:mt-4">
           {[
             { value: total, label: 'Задач', color: 'text-primary-600' },
             { value: done,  label: 'Завершено', color: 'text-green-600' },
             { value: tasks.filter(t => t.due_date && new Date(t.due_date) < new Date() && t.status !== 'done').length, label: 'Просрочено', color: 'text-orange-500' },
             { value: `${pct}%`, label: 'Прогресс', color: 'text-gray-700' },
           ].map(({ value, label, color }) => (
-            <div key={label} className="card text-center py-3">
-              <p className={`text-2xl font-bold ${color}`}>{value}</p>
-              <p className="text-xs text-gray-500">{label}</p>
+            <div key={label} className="card text-center py-2 md:py-3">
+              <p className={`text-lg md:text-2xl font-bold ${color}`}>{value}</p>
+              <p className="text-[10px] md:text-xs text-gray-500">{label}</p>
             </div>
           ))}
         </div>
-        <div className="mt-3">
-          <div className="bg-gray-100 rounded-full h-2">
-            <div className={`h-2 rounded-full transition-all ${pct === 100 ? 'bg-green-500' : 'bg-primary-500'}`}
+        <div className="mt-2 md:mt-3">
+          <div className="bg-gray-100 rounded-full h-1.5 md:h-2">
+            <div className={`h-1.5 md:h-2 rounded-full transition-all ${pct === 100 ? 'bg-green-500' : 'bg-primary-500'}`}
               style={{ width: `${pct}%` }} />
           </div>
         </div>
       </div>
 
       {/* Tabs + action */}
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex gap-1 bg-gray-100 rounded-lg p-1">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 mb-4">
+        <div className="flex gap-1 bg-gray-100 rounded-lg p-1 overflow-x-auto">
           {(['board','list','gantt','members'] as const).map(tab => (
             <button key={tab} onClick={() => setActiveTab(tab)}
-              className={`px-4 py-1.5 rounded-md text-sm font-medium transition-colors ${
+              className={`px-3 md:px-4 py-1.5 rounded-md text-xs md:text-sm font-medium whitespace-nowrap transition-colors ${
                 activeTab === tab ? 'bg-white shadow-sm text-gray-900' : 'text-gray-500 hover:text-gray-700'
               }`}>
               {tab === 'board' ? 'Доска' : tab === 'list' ? 'Список' : tab === 'gantt' ? 'Гант' : 'Участники'}
@@ -595,15 +595,15 @@ export default function ProjectDetailPage() {
           ))}
         </div>
         {canManage && activeTab !== 'list' && (
-          <button className="btn-primary" onClick={() => setModal({ type: 'create' })}>+ Задача</button>
+          <button className="btn-primary w-full sm:w-auto text-center text-sm" onClick={() => setModal({ type: 'create' })}>+ Задача</button>
         )}
       </div>
 
       {/* Board */}
       {activeTab === 'board' && (
-        <div className="grid grid-cols-4 gap-4">
+        <div className="flex md:grid md:grid-cols-4 gap-3 md:gap-4 overflow-x-auto pb-2 md:pb-0 snap-x snap-mandatory">
           {STATUS_COLS.map(col => (
-            <div key={col.key} className={`bg-gray-50 rounded-xl border-t-4 ${col.color} p-3`}>
+            <div key={col.key} className={`min-w-[240px] md:min-w-0 md:w-auto bg-gray-50 rounded-xl border-t-4 ${col.color} p-2 md:p-3 snap-start`}>
               <div className="flex items-center justify-between mb-3">
                 <h3 className="font-medium text-sm text-gray-700">{col.label}</h3>
                 <span className="text-xs bg-gray-200 text-gray-600 rounded-full px-2 py-0.5">

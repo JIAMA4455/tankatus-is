@@ -58,14 +58,14 @@ export default function DashboardPage() {
 
   return (
     <div>
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900">
+      <div className="mb-6 md:mb-8">
+        <h1 className="text-xl md:text-2xl font-bold text-gray-900">
           Добро пожаловать, {user?.full_name?.split(' ')[1] || user?.full_name}
         </h1>
-        <p className="text-gray-500 mt-1">Обзор состояния проектов и задач</p>
+        <p className="text-gray-500 text-sm mt-0.5">Обзор состояния проектов и задач</p>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-6 mb-6 md:mb-8">
         <StatCard label="Всего проектов"    value={totalProjects} sub="в системе" />
         <StatCard label="Активных проектов" value={activeProjects} sub="в работе" color="text-green-600" />
         <StatCard label="Всего задач"       value={totalTasks}    sub="в системе" />

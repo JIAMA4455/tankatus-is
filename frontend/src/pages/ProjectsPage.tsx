@@ -164,29 +164,31 @@ export default function ProjectsPage() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 md:mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Проекты</h1>
+          <h1 className="text-xl md:text-2xl font-bold text-gray-900">Проекты</h1>
           <p className="text-gray-500 text-sm mt-1">{projects.length} проектов</p>
         </div>
         {canCreate && (
-          <button className="btn-primary" onClick={() => setShowForm(true)}>+ Новый проект</button>
+          <button className="btn-primary w-full sm:w-auto text-center" onClick={() => setShowForm(true)}>+ Новый проект</button>
         )}
       </div>
 
-      <div className="flex flex-wrap gap-3 mb-6">
-        <input className="input max-w-xs" placeholder="Поиск по названию..." value={search}
+      <div className="flex flex-col sm:flex-row gap-2 mb-4 md:mb-6">
+        <input className="input w-full sm:max-w-xs" placeholder="Поиск по названию..." value={search}
           onChange={e => setSearch(e.target.value)} />
-        <select className="input max-w-[180px]" value={filterStatus}
-          onChange={e => setFilterStatus(e.target.value)}>
-          <option value="">Все статусы</option>
-          {STATUSES.map(s => <option key={s} value={s}>{STATUS_LABELS[s]}</option>)}
-        </select>
-        <select className="input max-w-[180px]" value={filterPriority}
-          onChange={e => setFilterPriority(e.target.value)}>
-          <option value="">Все приоритеты</option>
-          {PRIORITIES.map(s => <option key={s} value={s}>{PRIORITY_LABELS[s]}</option>)}
-        </select>
+        <div className="flex gap-2">
+          <select className="input flex-1 sm:max-w-[180px]" value={filterStatus}
+            onChange={e => setFilterStatus(e.target.value)}>
+            <option value="">Все статусы</option>
+            {STATUSES.map(s => <option key={s} value={s}>{STATUS_LABELS[s]}</option>)}
+          </select>
+          <select className="input flex-1 sm:max-w-[180px]" value={filterPriority}
+            onChange={e => setFilterPriority(e.target.value)}>
+            <option value="">Все приоритеты</option>
+            {PRIORITIES.map(s => <option key={s} value={s}>{PRIORITY_LABELS[s]}</option>)}
+          </select>
+        </div>
       </div>
 
       {loading ? (
